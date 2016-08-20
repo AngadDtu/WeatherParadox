@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Forecast.i/o</string>
+    <string name="alert_title">Oops! Sorry!</string>
+    <string name="alertDialog_message">Please try again!</string>
+    <string name="ok_button_text">OK</string>
+    <string name="network_error_toast_message">Network is Unavailable</string>
+    <string name="temperature">C</string>
+    <string name="time">At 5:30 PM will be</string>
+    <string name="TimeZone">timeZone</string>
+</resources>
