@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.angad.forecastio.Dialogs.AlertDialogFragment;
 import com.example.angad.forecastio.R;
 import com.example.angad.forecastio.model.Current;
+import com.example.angad.forecastio.model.Forecast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,9 +35,9 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity  {
 
     private static final String TAG =MainActivity.class.getSimpleName() ;
-    private Current mCurrent;
     private double mLongitude=77.1025;
     private double mLatitude= 28.7041;
+    private Forecast mForecast;
     @BindView(R.id.timeZoneLabel) TextView mTimeZoneValue;
     @BindView(R.id.temperatureLabel) TextView mTemperatureValue;
     @BindView(R.id.humidityLabel) TextView mHumidityValue;
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity  {
                         String JsonData=response.body().string();
                         if (response.isSuccessful()) {
                             Log.v(TAG, JsonData);
-                            mCurrent =getCurrentDetails(JsonData);
+                            mForecast =getForeCastDetails(JsonData);
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -129,6 +130,8 @@ public class MainActivity extends AppCompatActivity  {
                         Log.e(TAG, "NETWORKING ERRROR",e);
                     } catch (JSONException e) {
                         Log.e(TAG,"NETWORKING ERROR",e);
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
             });
@@ -152,6 +155,7 @@ public class MainActivity extends AppCompatActivity  {
     }*/
 
     private void onUpdateDetails() {
+        Current mCurrent=mForecast.getCurrent();
        mTimeZoneValue.setText(mCurrent.getTimeZone());
         mTemperatureValue.setText(mCurrent.getTempInCelcius()+"");
         mHumidityValue.setText(mCurrent.getHumidity()+"");
@@ -161,7 +165,12 @@ public class MainActivity extends AppCompatActivity  {
         mIconImageView.setImageDrawable(drawable);
         mTimeValue.setText("At "+ mCurrent.getFormattedTime()+" temp will be");
     }
+private Forecast getForeCastDetails(String jsonData) throws Exception{
+    Forecast forecast=new Forecast();
+    forecast.setCurrent(getCurrentDetails(jsonData));
+    return forecast;
 
+}
     private Current getCurrentDetails(String jsonData) throws JSONException {
         JSONObject forecast=new JSONObject(jsonData);
         JSONObject currently=forecast.getJSONObject("currently");
