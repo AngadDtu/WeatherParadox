@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Forecast.i/o</string>
+    <string name="app_name">Weather Paradox</string>
     <string name="alert_title">Oops! Sorry!</string>
     <string name="alertDialog_message">Please try again!</string>
     <string name="ok_button_text">OK</string>
