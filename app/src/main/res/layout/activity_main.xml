@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.MainActivity"
-    android:background="#FFA000">
+    android:background="@drawable/gradient">
 
     <TextView
         android:layout_width="wrap_content"
@@ -64,6 +64,8 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:layout_below="@+id/temperatureLabel"
         android:layout_centerHorizontal="true"
         android:weightSum="2"
@@ -129,8 +131,9 @@
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        android:layout_marginTop="50dp"
-        android:gravity="center"/>
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -148,5 +151,35 @@
         android:layout_alignBottom="@+id/refreshLabel"
         android:layout_centerHorizontal="true"
         android:layout_alignTop="@+id/refreshLabel"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="16dp"
+        android:paddingLeft="14dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:weightSum="100">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Hourly"
+            android:id="@+id/HourlyButton"
+            android:layout_weight="50"
+            android:background="#40ffffff"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="7 Days"
+            android:layout_marginLeft="2dp"
+            android:id="@+id/DaysButton"
+            android:layout_weight="50"
+            android:textColor="@android:color/white"
+            android:background="#40ffffff"/>
+    </LinearLayout>
 
 </RelativeLayout>
