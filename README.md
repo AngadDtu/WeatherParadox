@@ -7,5 +7,4 @@ JAVA,XML
 
 #APIs Used
 Forceast.io 
-#APP MOCKUPS
-![stormy_mockup](https://cloud.githubusercontent.com/assets/16436289/17783586/54df09de-6596-11e6-92c4-8263424df3d8.png)
+
