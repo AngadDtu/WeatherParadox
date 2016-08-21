@@ -7,4 +7,5 @@
     <string name="temperature">C</string>
     <string name="time">At 5:30 PM will be</string>
     <string name="TimeZone">timeZone</string>
+    <string name="title_activity_daily_forecast">DailyForecastActivity</string>
 </resources>
