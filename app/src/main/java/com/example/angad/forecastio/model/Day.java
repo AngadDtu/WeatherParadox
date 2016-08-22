@@ -35,7 +35,8 @@ public class Day implements Serializable {
     }
 
     public int getTemperatureMax() {
-        return (int) Math.round(mTemperatureMax);
+        double temp=(mTemperatureMax-32)/1.8;
+        return (int) Math.round(temp);
     }
 
     public void setTemperatureMax(double temperatureMax) {
