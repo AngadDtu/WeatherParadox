@@ -1,6 +1,7 @@
 package com.example.angad.forecastio.UI;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -29,6 +30,7 @@ import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -247,6 +249,10 @@ private Forecast getForeCastDetails(String jsonData) throws Exception{
         AlertDialogFragment dialog=new AlertDialogFragment();
         dialog.show(getFragmentManager(),"Alert Dialog Message");
     }
-
+ @OnClick(R.id.DaysButton)
+    public void startDaysActivity(View view){
+     Intent intent=new Intent(this,DailyForecastActivity.class);
+     startActivity(intent);
+ }
 
 }
