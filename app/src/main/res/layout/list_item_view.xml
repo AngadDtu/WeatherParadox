@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/itemView_padding_left"
+                android:paddingRight="@dimen/itemView_padding_right"
+                android:paddingTop="@dimen/itemView_padding_top"
+                android:paddingBottom="@dimen/itemView_padding_bottom"
+                tools:background="#ffaa00"
+                android:id="@+id/list_item_view">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/circleView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/bg_temperature"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iconView"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/circleView"
+        android:layout_toEndOf="@+id/circleView"
+        android:background="@drawable/clear_day"
+        android:paddingLeft="@dimen/itemView_padding_top"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Wednesday"
+        android:id="@+id/textView"
+        android:textColor="#ffffffff"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/iconView"
+        android:layout_toEndOf="@+id/iconView"
+        android:textSize="20sp"
+        android:paddingLeft="@dimen/itemView_padding_top"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="100"
+        android:id="@+id/textView2"
+        android:layout_alignLeft="@+id/circleView"
+        android:layout_alignBottom="@+id/circleView"
+        android:layout_alignTop="@+id/circleView"
+        android:layout_alignRight="@+id/circleView"
+        android:gravity="center"/>
+
+</RelativeLayout>
