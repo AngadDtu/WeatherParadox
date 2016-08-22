@@ -40,6 +40,7 @@ import okhttp3.Response;
 public class MainActivity extends AppCompatActivity  {
 
     private static final String TAG =MainActivity.class.getSimpleName() ;
+    public static final String DAILY_FORECAST="DAILY_FORECAST";
     private double mLongitude=77.1025;
     private double mLatitude= 28.7041;
     private Forecast mForecast;
@@ -252,6 +253,7 @@ private Forecast getForeCastDetails(String jsonData) throws Exception{
  @OnClick(R.id.DaysButton)
     public void startDaysActivity(View view){
      Intent intent=new Intent(this,DailyForecastActivity.class);
+     intent.putExtra(DAILY_FORECAST,mForecast.getDay());
      startActivity(intent);
  }
 

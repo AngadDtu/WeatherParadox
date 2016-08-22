@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/MainActivity_padding_left"
     android:paddingRight="@dimen/MainActivity_padding_right"
+    android:paddingTop="@dimen/MainActivity_padding_top"
     tools:context=".UI.MainActivity"
     android:background="@drawable/gradient">
 
@@ -32,7 +33,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="--"
+        android:text="--:--"
         android:id="@+id/timeLabel"
         android:layout_above="@+id/temperatureLabel"
         android:layout_centerHorizontal="true"
@@ -83,7 +84,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="HUMIDITY"
+                android:text="@string/humidity"
                 android:id="@+id/Humidity"
                 android:textColor="#80ffffff"
                 android:layout_gravity="center"/>
@@ -107,7 +108,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rain/Snow? "
+                android:text="@string/rain_snow"
                 android:id="@+id/rainLabel"
                 android:textColor="#80ffffff"
                 android:layout_gravity="center"/>
@@ -127,7 +128,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Getting weather data..."
+        android:text="@string/getting_weather_data"
         android:id="@+id/summaryLabel"
         android:layout_below="@+id/linearLayout"
         android:layout_centerHorizontal="true"
@@ -165,7 +166,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Hourly"
+            android:text="@string/hourly_button_text"
             android:id="@+id/HourlyButton"
             android:layout_weight="50"
             android:background="#40ffffff"
@@ -174,7 +175,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="7 Days"
+            android:text="@string/Daily_button_text"
             android:layout_marginLeft="2dp"
             android:id="@+id/DaysButton"
             android:layout_weight="50"
