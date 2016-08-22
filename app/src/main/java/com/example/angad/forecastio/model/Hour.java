@@ -1,6 +1,8 @@
 package com.example.angad.forecastio.model;
 
-public class Hour {
+import java.io.Serializable;
+
+public class Hour implements Serializable{
     private long mTime;
     private  String mSummary;
     private  String mTimeZone;

@@ -41,7 +41,7 @@
         android:id="@+id/thisWeekLabel"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textColor="#ffffffff"
         android:layout_marginTop="@dimen/list_vertical_margin"/>
 

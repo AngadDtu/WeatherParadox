@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.angad.forecastio.Dialogs.AlertDialogFragment;
+import com.example.angad.forecastio.HourlyActivity;
 import com.example.angad.forecastio.R;
 import com.example.angad.forecastio.model.Current;
 import com.example.angad.forecastio.model.Day;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity  {
 
     private static final String TAG =MainActivity.class.getSimpleName() ;
     public static final String DAILY_FORECAST="DAILY_FORECAST";
+    public static final String HOURLY_FORECAST ="HOURLY_FORECAST" ;
     private double mLongitude=77.1025;
     private double mLatitude= 28.7041;
     private Forecast mForecast;
@@ -256,5 +258,11 @@ private Forecast getForeCastDetails(String jsonData) throws Exception{
      intent.putExtra(DAILY_FORECAST,mForecast.getDay());
      startActivity(intent);
  }
+    @OnClick(R.id.HourlyButton)
+    public void startHoursActivity(View view){
+        Intent intent=new Intent(MainActivity.this, HourlyActivity.class);
+        intent.putExtra(HOURLY_FORECAST,mForecast.getHour());
+        startActivity(intent);
+    }
 
 }
