@@ -8,3 +8,8 @@ JAVA,XML
 #APIs Used
 Forceast.io 
 
+#App Mockups
+
+![phptnvpbdam](https://cloud.githubusercontent.com/assets/16436289/17883025/c4881df8-692d-11e6-8774-de9d21cb7460.jpg)
+![phpyv5tleam](https://cloud.githubusercontent.com/assets/16436289/17883032/ce81ef3c-692d-11e6-980d-3473ccb768d0.jpg)
+
