@@ -46,6 +46,7 @@
         android:layout_height="wrap_content"
         tools:text="Partly Cloudy"
         android:id="@+id/textView3"
+        android:gravity="center"
         android:layout_toRightOf="@+id/iconLabel"
         android:layout_toEndOf="@+id/iconLabel"
         android:textColor="#ffffffff"

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import com.example.angad.forecastio.UI.MainActivity;
 import com.example.angad.forecastio.model.Hour;
 
+import butterknife.OnClick;
+
 public class HourlyActivity extends AppCompatActivity {
 Hour[] mHours;
     @Override
@@ -15,6 +17,7 @@ Hour[] mHours;
         setContentView(R.layout.activity_hourly);
         Intent intent=getIntent();
         mHours= (Hour[]) intent.getSerializableExtra(MainActivity.HOURLY_FORECAST);
+
 
     }
 }
