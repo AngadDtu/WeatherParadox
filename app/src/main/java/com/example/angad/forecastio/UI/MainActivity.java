@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity  {
     public static final String HOURLY_FORECAST ="HOURLY_FORECAST" ;
     private double mLongitude=77.1025;
     private double mLatitude= 28.7041;
+    private boolean isResponse=false;
     private Forecast mForecast;
     @BindView(R.id.timeZoneLabel) TextView mTimeZoneValue;
     @BindView(R.id.temperatureLabel) TextView mTemperatureValue;
@@ -115,6 +116,7 @@ public class MainActivity extends AppCompatActivity  {
                     try {
                         String JsonData=response.body().string();
                         if (response.isSuccessful()) {
+                            isResponse=true;
                             Log.v(TAG, JsonData);
                             mForecast =getForeCastDetails(JsonData);
                             runOnUiThread(new Runnable() {
@@ -255,7 +257,7 @@ private Forecast getForeCastDetails(String jsonData) throws Exception{
  @OnClick(R.id.DaysButton)
     public void startDaysActivity(View view) {
      Intent intent = new Intent(this, DailyForecastActivity.class);
-     if (isNetworkAvailable()) {
+     if (isNetworkAvailable() && isResponse==true) {
          intent.putExtra(DAILY_FORECAST, mForecast.getDay());
          startActivity(intent);
      } else {
@@ -265,7 +267,7 @@ private Forecast getForeCastDetails(String jsonData) throws Exception{
     @OnClick(R.id.HourlyButton)
     public void startHoursActivity(View view) {
         Intent intent = new Intent(MainActivity.this, HourlyActivity.class);
-        if(isNetworkAvailable()) {
+        if(isNetworkAvailable() && isResponse==true) {
             intent.putExtra(HOURLY_FORECAST, mForecast.getHour());
             startActivity(intent);
         }else{
