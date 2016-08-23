@@ -11,5 +11,5 @@
     <dimen name="itemView_padding_right">32dp</dimen>
     <dimen name="itemView_padding_top">10dp</dimen>
     <dimen name="itemView_padding_bottom">10dp</dimen>
-    <dimen name="list_vertical_margin">10dp</dimen>
+    <dimen name="list_vertical_margin">8dp</dimen>
 </resources>
