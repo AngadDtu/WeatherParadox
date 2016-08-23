@@ -1,6 +1,8 @@
 package com.example.angad.forecastio.model;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Hour implements Serializable{
     private long mTime;
@@ -33,8 +35,10 @@ public class Hour implements Serializable{
         mTimeZone = timeZone;
     }
 
-    public double getTemperarture() {
-        return mTemperarture;
+    public int getTemperarture() {
+        double temp=(mTemperarture-32)/1.8;
+
+        return (int)Math.round(temp);
     }
 
     public void setTemperarture(double temperarture) {
@@ -44,8 +48,18 @@ public class Hour implements Serializable{
     public String getIcon() {
         return mIcon;
     }
+    public int getIconId(){
+        return Forecast.getIconId(mIcon);
+
+    }
 
     public void setIcon(String icon) {
         mIcon = icon;
+    }
+
+    public String getHour(){
+        SimpleDateFormat formatter=new SimpleDateFormat("h a");
+        Date date=new Date(getTime() * 1000);
+       return formatter.format(date);
     }
 }

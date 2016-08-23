@@ -253,16 +253,16 @@ private Forecast getForeCastDetails(String jsonData) throws Exception{
         dialog.show(getFragmentManager(),"Alert Dialog Message");
     }
  @OnClick(R.id.DaysButton)
-    public void startDaysActivity(View view){
-     Intent intent=new Intent(this,DailyForecastActivity.class);
-     intent.putExtra(DAILY_FORECAST,mForecast.getDay());
-     startActivity(intent);
+    public void startDaysActivity(View view) {
+     Intent intent = new Intent(this, DailyForecastActivity.class);
+         intent.putExtra(DAILY_FORECAST, mForecast.getDay());
+         startActivity(intent);
  }
     @OnClick(R.id.HourlyButton)
-    public void startHoursActivity(View view){
-        Intent intent=new Intent(MainActivity.this, HourlyActivity.class);
-        intent.putExtra(HOURLY_FORECAST,mForecast.getHour());
-        startActivity(intent);
+    public void startHoursActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, HourlyActivity.class);
+            intent.putExtra(HOURLY_FORECAST, mForecast.getHour());
+            startActivity(intent);
     }
 
 }

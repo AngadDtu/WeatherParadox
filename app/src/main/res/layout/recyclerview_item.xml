@@ -5,7 +5,7 @@
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
                 xmlns:tools="http://schemas.android.com/tools"
-                android:background="@drawable/gradient">
+                tools:background="@drawable/gradient">
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="100"
-        android:id="@+id/summaryLabel"
+        android:id="@+id/Temperarture"
         android:layout_centerVertical="true"
         android:layout_alignParentTop="false"
         android:layout_alignParentRight="true"
@@ -45,12 +45,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Partly Cloudy"
-        android:id="@+id/textView3"
+        android:id="@+id/summaryLabel"
         android:gravity="center"
         android:layout_toRightOf="@+id/iconLabel"
         android:layout_toEndOf="@+id/iconLabel"
         android:textColor="#ffffffff"
-        android:layout_toLeftOf="@+id/summaryLabel"
+        android:layout_toLeftOf="@+id/Temperarture"
         android:layout_centerVertical="true"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"/>
