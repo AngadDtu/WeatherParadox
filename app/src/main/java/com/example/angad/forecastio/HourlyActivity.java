@@ -19,6 +19,7 @@ import butterknife.OnClick;
 public class HourlyActivity extends AppCompatActivity {
 Hour[] mHours;
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    @BindView(R.id.emptyView) TextView mEmptyView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,14 +27,21 @@ Hour[] mHours;
         ButterKnife.bind(this);
         Intent intent=getIntent();
         mHours= (Hour[]) intent.getSerializableExtra(MainActivity.HOURLY_FORECAST);
-        HourAdapter adapter=new HourAdapter(this,mHours);
-        mRecyclerView.setAdapter(adapter);
+        if(mHours==null){
+         mRecyclerView.setVisibility(View.INVISIBLE);
+            mEmptyView.setVisibility(View.VISIBLE);
+        }
+        else {
+            mRecyclerView.setVisibility(View.VISIBLE);
+            mEmptyView.setVisibility(View.INVISIBLE);
+            HourAdapter adapter = new HourAdapter(this, mHours);
+            mRecyclerView.setAdapter(adapter);
 //adding a layout manager is compulsory
-        RecyclerView.LayoutManager manager=new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(manager);
+            RecyclerView.LayoutManager manager = new LinearLayoutManager(this);
+            mRecyclerView.setLayoutManager(manager);
 
-        //for performance
-        mRecyclerView.setHasFixedSize(true);
-
+            //for performance
+            mRecyclerView.setHasFixedSize(true);
+        }
     }
 }

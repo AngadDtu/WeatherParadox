@@ -22,7 +22,10 @@ public class CustomArrayAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return mDays.length;
+        if(mDays!=null) {
+            return mDays.length;
+        }
+        return 0;
     }
 
     @Override

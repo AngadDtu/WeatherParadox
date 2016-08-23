@@ -255,14 +255,22 @@ private Forecast getForeCastDetails(String jsonData) throws Exception{
  @OnClick(R.id.DaysButton)
     public void startDaysActivity(View view) {
      Intent intent = new Intent(this, DailyForecastActivity.class);
+     if (isNetworkAvailable()) {
          intent.putExtra(DAILY_FORECAST, mForecast.getDay());
          startActivity(intent);
+     } else {
+         startActivity(intent);
+     }
  }
     @OnClick(R.id.HourlyButton)
     public void startHoursActivity(View view) {
         Intent intent = new Intent(MainActivity.this, HourlyActivity.class);
+        if(isNetworkAvailable()) {
             intent.putExtra(HOURLY_FORECAST, mForecast.getHour());
             startActivity(intent);
+        }else{
+            startActivity(intent);
+        }
     }
 
 }

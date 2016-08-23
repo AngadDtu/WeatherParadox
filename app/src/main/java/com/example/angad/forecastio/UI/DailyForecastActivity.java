@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.angad.forecastio.Adapters.CustomArrayAdapter;
 import com.example.angad.forecastio.R;
 import com.example.angad.forecastio.model.Day;
+import com.example.angad.forecastio.model.Forecast;
 
 import java.util.Arrays;
 
@@ -25,7 +26,6 @@ import butterknife.ButterKnife;
 public class DailyForecastActivity extends Activity {
 
     private Day[] mDays;
-    @BindView(R.id.locationLabel) TextView mLocation;
 @BindView(android.R.id.list) ListView mListView;
     @BindView(android.R.id.empty) TextView mEmptyText;
     @Override
@@ -35,10 +35,9 @@ public class DailyForecastActivity extends Activity {
         ButterKnife.bind(this);
         Intent intent = getIntent();
         mDays = (Day[]) intent.getSerializableExtra(MainActivity.DAILY_FORECAST);
+        mListView.setEmptyView(mEmptyText);
         CustomArrayAdapter adapter = new CustomArrayAdapter(this, mDays);
         mListView.setAdapter(adapter);
-        mLocation.setText(mDays[0].getTimezone());
-        mListView.setEmptyView(mEmptyText);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -10,7 +10,7 @@
     <string name="title_activity_daily_forecast">DailyForecastActivity</string>
     <string name="empty_text_feild">No data to display.</string>
     <string name="Day_listView_heading">This week\'s Forecast</string>
-    <string name="Day_ListView_Bottom">New Delhi,India</string>
+    <string name="Day_ListView_Bottom">TimeZone</string>
     <string name="humidity">HUMIDITY</string>
     <string name="rain_snow">Rain/Snow?</string>
     <string name="getting_weather_data">Getting weather data...</string>
